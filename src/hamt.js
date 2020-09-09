@@ -38,7 +38,7 @@ var defaultValBind = function defaultValBind(f, defaultValue) {
     http://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript-jquery
 */
 var hash = hamt.hash = function (str) {
-    var type = typeof str === 'undefined' ? 'undefined' : _typeof(str);
+    var type = typeof str;
     if (type === 'number') return str;
     if (type !== 'string') str += '';
 
