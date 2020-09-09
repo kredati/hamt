@@ -4,13 +4,14 @@
 
 <p align="center">Javascript Hash Array Mapped Trie</p>
 
-[![Build Status](https://travis-ci.org/mattbierner/hamt.svg?branch=master)](https://travis-ci.org/mattbierner/hamt)
+### This is a fork
+This is a fork (ultimately, a revision & update) of [Matt Bierner's HAMT implementation in Javascript](https://www.github.com/mattbierner/hamt/) for the [Ludus project](https://www.github.com/kredati/ludus/) (still _very much_ in development). For now, this simply updates the module to use ES6 modules. Soon, it will migrate the test suite to Deno's included testrunner. We may refactor the code into the Ludus house style (no classes, pure functions). It's used to implement fast immutable objects (read: hash maps) in Ludus.
 
 ### Overview
 The [hash array mapped trie][hash-array-mapped-trie] is a [persistent][persistent] map data structure with good lookup and update performance. This library provides an immutable map with an API that resembles [ES6's `Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map).
 
 ```javascript
-var hamt = require('hamt');
+import hamt from 'hamt'; // assuming npm; deno.land/x forthcoming
 
 // Keys can be any string and the map can store any value.
 var h = hamt.empty
@@ -46,26 +47,11 @@ $ npm install hamt
 ```
 
 ``` javascript
-var hamt = require('hamt');
+import hamt from 'hamt';
 
 var h = hamt.empty.set('key', 'value');
 
 ...
-```
-
-
-### AMD
-``` javascript
-requirejs.config({
-    paths: {
-        'hamt': 'path/to/hamt/lib/hamt'
-    }
-});
-
-require(['hamt'], function(hamt) {
-    var h = hamt.empty.set('key', 'value');
-    ...
-});
 ```
 
 
