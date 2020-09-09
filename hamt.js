@@ -1,6 +1,8 @@
-'use strict';
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+//////////////////// HAMT, Hash Array Mapped Trie
+// Or, fast, immutable hashmaps.
+// Forked and adapted from https://github.com/mattbierner/hamt
+// For the Ludus project
+// Deno- & web-module compatible
 
 /**
     @fileOverview Hash Array Mapped Trie.
@@ -841,13 +843,4 @@ Map.prototype.count = function () {
 
 /* Export
  ******************************************************************************/
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = hamt;
-} else if (typeof define === 'function' && define.amd) {
-    define('hamt', [], function () {
-        return hamt;
-    });
-} else {
-    undefined.hamt = hamt;
-}
-//# sourceMappingURL=hamt.js.map
+export default hamt;
